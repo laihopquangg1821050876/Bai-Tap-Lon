@@ -15,5 +15,6 @@ namespace BaiTapLon.Models
         public string TenHang { get; set; }
         public string DonViTinh { get; set; }
         public string SoLuong { get; set; }
+        public string GiaSP { get; set; }
     }
 }

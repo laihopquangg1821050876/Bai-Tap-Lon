@@ -15,7 +15,8 @@ namespace BaiTapLon.Migrations
                         TenHang = c.String(),
                         DonViTinh = c.String(),
                         SoLuong = c.String(),
-                    })
+                        GiaSP = c.String(),
+                })
                 .PrimaryKey(t => t.MaHang);
             
         }
