@@ -171,6 +171,7 @@
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\Process\StringProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
