@@ -7,18 +7,22 @@ namespace BaiTapLon.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.KhachHangs", "MaDH", c => c.String());
-            AddColumn("dbo.KhachHangs", "Ngay", c => c.String());
-            AddColumn("dbo.KhachHangs", "MaNV", c => c.String());
-            AddColumn("dbo.KhachHangs", "Discriminator", c => c.String(nullable: false, maxLength: 128));
+            AddColumn("dbo.Donhangs", "MaDH", c => c.String());
+            AddColumn("dbo.Donhangs", "Ngay", c => c.String());
+            AddColumn("dbo.Donhangs", "MaNV", c => c.String());
+            AddColumn("dbo.Donhangs", "TenSP", c => c.String());
+            AddColumn("dbo.Donhangs", "GiaSP", c => c.String());
+            AddColumn("dbo.Donhangs", "Discriminator", c => c.String(nullable: false, maxLength: 128));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.KhachHangs", "Discriminator");
-            DropColumn("dbo.KhachHangs", "MaNV");
-            DropColumn("dbo.KhachHangs", "Ngay");
-            DropColumn("dbo.KhachHangs", "MaDH");
+            DropColumn("dbo.Donhangs", "Discriminator");
+            DropColumn("dbo.Donhangs", "MaNV");
+            DropColumn("dbo.Donhangs", "Ngay");
+            DropColumn("dbo.Donhangs", "MaDH");
+            DropColumn("dbo.Donhangs", "TenSP");
+            DropColumn("dbo.Donhangs", "GiaSP");
         }
     }
 }
