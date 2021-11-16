@@ -8,7 +8,7 @@ namespace BaiTapLon.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Accounts",
+                "dbo.Account",
                 c => new
                     {
                         UserName = c.String(nullable: false, maxLength: 128),

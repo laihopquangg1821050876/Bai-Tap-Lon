@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace BaiTapLon.Controllers
+namespace BaiTapLon.Controller
 {
     public class AccountController : Controller
     {

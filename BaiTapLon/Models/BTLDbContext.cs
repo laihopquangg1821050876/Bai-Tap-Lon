@@ -15,7 +15,7 @@ namespace BaiTapLon.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<DanhMucHang> DanhMucHangs { get; set; }
-        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Account> Account { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

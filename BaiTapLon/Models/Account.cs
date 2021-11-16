@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BaiTapLon.Models
 {
-    [Table("Accounts")]
+    [Table("Account")]
     public class Account
     {
         [Key]

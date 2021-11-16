@@ -6,7 +6,7 @@ using System.Web.Security;
 
 namespace BaiTapLon.Models
 {
-    public class Encrytion
+    public class Encrytio
     {
         public string PasswordEncrytion(string pass)
         {
