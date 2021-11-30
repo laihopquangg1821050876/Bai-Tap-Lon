@@ -138,29 +138,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104210804508_Create_Table_NhanVien.cs" />
-    <Compile Include="Migrations\202104210804508_Create_Table_NhanVien.Designer.cs">
-      <DependentUpon>202104210804508_Create_Table_NhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210810275_Create_Table_KhachHang.cs" />
-    <Compile Include="Migrations\202104210810275_Create_Table_KhachHang.Designer.cs">
-      <DependentUpon>202104210810275_Create_Table_KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210815236_Create_Table_DonHang.cs" />
-    <Compile Include="Migrations\202104210815236_Create_Table_DonHang.Designer.cs">
-      <DependentUpon>202104210815236_Create_Table_DonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210831408_Create_Table_DanhMucHang.cs" />
-    <Compile Include="Migrations\202104210831408_Create_Table_DanhMucHang.Designer.cs">
-      <DependentUpon>202104210831408_Create_Table_DanhMucHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210836414_Create_Table_ChiTietDonHang.cs" />
-    <Compile Include="Migrations\202104210836414_Create_Table_ChiTietDonHang.Designer.cs">
-      <DependentUpon>202104210836414_Create_Table_ChiTietDonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105171655285_Account.cs" />
-    <Compile Include="Migrations\202105171655285_Account.Designer.cs">
-      <DependentUpon>202105171655285_Account.cs</DependentUpon>
+    <Compile Include="Migrations\202111230216087_InitialCreate.cs" />
+    <Compile Include="Migrations\202111230216087_InitialCreate.Designer.cs">
+      <DependentUpon>202111230216087_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -604,23 +584,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104210804508_Create_Table_NhanVien.resx">
-      <DependentUpon>202104210804508_Create_Table_NhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210810275_Create_Table_KhachHang.resx">
-      <DependentUpon>202104210810275_Create_Table_KhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210815236_Create_Table_DonHang.resx">
-      <DependentUpon>202104210815236_Create_Table_DonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210831408_Create_Table_DanhMucHang.resx">
-      <DependentUpon>202104210831408_Create_Table_DanhMucHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210836414_Create_Table_ChiTietDonHang.resx">
-      <DependentUpon>202104210836414_Create_Table_ChiTietDonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105171655285_Account.resx">
-      <DependentUpon>202105171655285_Account.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111230216087_InitialCreate.resx">
+      <DependentUpon>202111230216087_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

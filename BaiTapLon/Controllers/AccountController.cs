@@ -12,7 +12,7 @@ namespace BaiTapLon.Controllers
     {
 
         Encrytion encry = new Encrytion();
-        BTLDbContext db = new BTLDbContext();
+        readonly BTLDbContext db = new BTLDbContext();
         // GET: Account
         [HttpGet]
         public ActionResult Register()
@@ -22,7 +22,7 @@ namespace BaiTapLon.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-
+        [Obsolete]
         public ActionResult Register(Account acc)
         {
             if (ModelState.IsValid)
@@ -44,6 +44,7 @@ namespace BaiTapLon.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
+        [Obsolete]
         public ActionResult Login(Account acc)
         {
             if (ModelState.IsValid)

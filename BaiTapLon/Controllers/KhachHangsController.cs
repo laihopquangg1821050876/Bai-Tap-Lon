@@ -10,7 +10,7 @@ using BaiTapLon.Models;
 
 namespace BaiTapLon.Controllers
 {
-    [Authorize]
+    
     public class KhachHangsController : Controller
     {
         private BTLDbContext db = new BTLDbContext();

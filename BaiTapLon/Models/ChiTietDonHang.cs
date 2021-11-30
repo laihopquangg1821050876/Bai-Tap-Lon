@@ -7,13 +7,12 @@ using System.Web;
 
 namespace BaiTapLon.Models
 {
-    [Table("Chitietdonhang")]
-    public class ChiTietDonHang:DonHang
+    [Table("ChiTietDonHangs")]
+    public class ChiTietDonHang
     {
-        [Key] 
-        public string MaHang { get; set; }
-        public string DonGia{ get; set; }
-        public string SoLuong { get; set; }
-        public string ThanhTien { get; set; }
+        [Key]
+        public int ChiTietDonHangID { get; set; }
+        public int DonHangID { get; set; }
+        //Ma san pham, so luong....
     }
 }

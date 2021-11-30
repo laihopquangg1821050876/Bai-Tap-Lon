@@ -8,6 +8,7 @@ namespace BaiTapLon.Models
 {
     public class Encrytion
     {
+        [Obsolete]
         public string PasswordEncrytion(string pass)
         {
             return FormsAuthentication.HashPasswordForStoringInConfigFile(pass.Trim(), "MD5");

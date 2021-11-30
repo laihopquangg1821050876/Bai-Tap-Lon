@@ -7,16 +7,13 @@ using System.Web;
 
 namespace BaiTapLon.Models
 {
-    [Table("Donhang")]
-    public class DonHang:KhachHang
+    [Table("DonHangs")]
+    public class DonHang
     {
         [Key]
-        public string MaDH { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime Ngaytao { get; set; }
+        public int DonHangID { get; set; }
+        public string MaKH { get; set; }
+        public DateTime CreateDate { get; set; }
         public string MaNV { get; set; }
-        public string TenSP { get; set; }
-        public string GiaSP {get; set; }
-
     }
 }

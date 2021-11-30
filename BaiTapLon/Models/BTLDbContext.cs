@@ -16,13 +16,14 @@ namespace BaiTapLon.Models
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<DanhMucHang> DanhMucHangs { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<DonHang> DonHangs { get; set; }
+
+        public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
 
-        public System.Data.Entity.DbSet<BaiTapLon.Models.DonHang> DonHangs { get; set; }
-
-        public System.Data.Entity.DbSet<BaiTapLon.Models.ChiTietDonHang> ChiTietDonHangs { get; set; }
+        
     }
 }
