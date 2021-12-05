@@ -28,6 +28,7 @@ namespace BaiTapLon
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/w3.css",
                       "~/Content/site.css"));
         }
     }

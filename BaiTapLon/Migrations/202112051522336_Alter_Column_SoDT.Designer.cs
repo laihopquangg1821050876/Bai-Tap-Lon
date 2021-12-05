@@ -7,13 +7,13 @@ namespace BaiTapLon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Alter_Column_SoDT : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Alter_Column_SoDT));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111230216087_InitialCreate"; }
+            get { return "202112051522336_Alter_Column_SoDT"; }
         }
         
         string IMigrationMetadata.Source

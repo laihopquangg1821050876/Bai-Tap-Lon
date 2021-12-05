@@ -3,7 +3,7 @@ namespace BaiTapLon.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Create_Table_NhanViens : DbMigration
     {
         public override void Up()
         {
@@ -15,15 +15,6 @@ namespace BaiTapLon.Migrations
                         PassWord = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.UserName);
-            
-            CreateTable(
-                "dbo.ChiTietDonHangs",
-                c => new
-                    {
-                        ChiTietDonHangID = c.Int(nullable: false, identity: true),
-                        DonHangID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ChiTietDonHangID);
             
             CreateTable(
                 "dbo.DanhMucHangs",
@@ -41,7 +32,7 @@ namespace BaiTapLon.Migrations
                 "dbo.DonHangs",
                 c => new
                     {
-                        DonHangID = c.Int(nullable: false, identity: true),
+                        DonHangID = c.String(nullable: false, maxLength: 128),
                         MaKH = c.String(),
                         CreateDate = c.DateTime(nullable: false),
                         MaNV = c.String(),
@@ -64,20 +55,57 @@ namespace BaiTapLon.Migrations
                     {
                         MaNV = c.String(nullable: false, maxLength: 128),
                         TenNV = c.String(),
-                        SoDienThoai = c.String(),
+                        SoDT = c.String(nullable: false),
                         DiaChi = c.String(),
                     })
                 .PrimaryKey(t => t.MaNV);
+            
+            CreateTable(
+                "dbo.PhieuNhap",
+                c => new
+                    {
+                        MaNV = c.String(nullable: false, maxLength: 128),
+                        TenNV = c.String(),
+                        DonHangID = c.String(maxLength: 128),
+                        TenHang = c.String(),
+                        Soluong = c.Int(nullable: false),
+                        thanhtien = c.String(),
+                        Ngaytao = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.MaNV)
+                .ForeignKey("dbo.DonHangs", t => t.DonHangID)
+                .Index(t => t.DonHangID);
+            
+            CreateTable(
+                "dbo.phieuxuat",
+                c => new
+                    {
+                        MaNV = c.String(nullable: false, maxLength: 128),
+                        TenNV = c.String(),
+                        DonHangID = c.String(maxLength: 128),
+                        TenHang = c.String(),
+                        Soluong = c.Int(nullable: false),
+                        thanhtien = c.String(),
+                        Ngaytao = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.MaNV)
+                .ForeignKey("dbo.DonHangs", t => t.DonHangID)
+                .Index(t => t.DonHangID);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.phieuxuat", "DonHangID", "dbo.DonHangs");
+            DropForeignKey("dbo.PhieuNhap", "DonHangID", "dbo.DonHangs");
+            DropIndex("dbo.phieuxuat", new[] { "DonHangID" });
+            DropIndex("dbo.PhieuNhap", new[] { "DonHangID" });
+            DropTable("dbo.phieuxuat");
+            DropTable("dbo.PhieuNhap");
             DropTable("dbo.NhanViens");
             DropTable("dbo.KhachHangs");
             DropTable("dbo.DonHangs");
             DropTable("dbo.DanhMucHangs");
-            DropTable("dbo.ChiTietDonHangs");
             DropTable("dbo.Accounts");
         }
     }

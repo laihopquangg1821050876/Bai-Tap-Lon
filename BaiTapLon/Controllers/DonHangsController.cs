@@ -10,11 +10,10 @@ using BaiTapLon.Models;
 
 namespace BaiTapLon.Controllers
 {
-    [Authorize]
     public class DonHangsController : Controller
     {
         private BTLDbContext db = new BTLDbContext();
-
+        [Authorize]
         // GET: DonHangs
         public ActionResult Index()
         {
@@ -47,7 +46,7 @@ namespace BaiTapLon.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaKH,MaDH,Ngay,MaNV,TenKH,DiachiKH")] DonHang donHang)
+        public ActionResult Create([Bind(Include = "DonHangID,MaKH,CreateDate,MaNV")] DonHang donHang)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace BaiTapLon.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaKH,MaDH,Ngay,MaNV,TenKH,DiachiKH")] DonHang donHang)
+        public ActionResult Edit([Bind(Include = "DonHangID,MaKH,CreateDate,MaNV")] DonHang donHang)
         {
             if (ModelState.IsValid)
             {

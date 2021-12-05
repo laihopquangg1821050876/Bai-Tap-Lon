@@ -10,108 +10,112 @@ using BaiTapLon.Models;
 
 namespace BaiTapLon.Controllers
 {
-    [Authorize]
-    public class ChiTietDonHangsController : Controller
+    public class PhieuNhapsController : Controller
     {
         private BTLDbContext db = new BTLDbContext();
-
-        // GET: ChiTietDonHangs
+        [Authorize]
+        // GET: PhieuNhaps
         public ActionResult Index()
         {
-            return View(db.ChiTietDonHangs.ToList());
+            var phieuNhap = db.PhieuNhap.Include(p => p.DonHangs);
+            return View(phieuNhap.ToList());
         }
 
-        // GET: ChiTietDonHangs/Details/5
+        // GET: PhieuNhaps/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChiTietDonHang chiTietDonHang = db.ChiTietDonHangs.Find(id);
-            if (chiTietDonHang == null)
+            PhieuNhap phieuNhap = db.PhieuNhap.Find(id);
+            if (phieuNhap == null)
             {
                 return HttpNotFound();
             }
-            return View(chiTietDonHang);
+            return View(phieuNhap);
         }
 
-        // GET: ChiTietDonHangs/Create
+        // GET: PhieuNhaps/Create
         public ActionResult Create()
         {
+            ViewBag.DonHangID = new SelectList(db.DonHangs, "DonHangID", "MaKH");
             return View();
         }
 
-        // POST: ChiTietDonHangs/Create
+        // POST: PhieuNhaps/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaKH,MaHang,DonGia,SoLuong,ThanhTien,MaDH,Ngay,MaNV,TenKH,DiachiKH")] ChiTietDonHang chiTietDonHang)
+        public ActionResult Create([Bind(Include = "MaNV,TenNV,DonHangID,TenHang,Soluong,thanhtien,Ngaytao")] PhieuNhap phieuNhap)
         {
             if (ModelState.IsValid)
             {
-                db.ChiTietDonHangs.Add(chiTietDonHang);
+                db.PhieuNhap.Add(phieuNhap);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(chiTietDonHang);
+            ViewBag.DonHangID = new SelectList(db.DonHangs, "DonHangID", "MaKH", phieuNhap.DonHangID);
+            return View(phieuNhap);
         }
 
-        // GET: ChiTietDonHangs/Edit/5
+        // GET: PhieuNhaps/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChiTietDonHang chiTietDonHang = db.ChiTietDonHangs.Find(id);
-            if (chiTietDonHang == null)
+            PhieuNhap phieuNhap = db.PhieuNhap.Find(id);
+            if (phieuNhap == null)
             {
                 return HttpNotFound();
             }
-            return View(chiTietDonHang);
+            ViewBag.DonHangID = new SelectList(db.DonHangs, "DonHangID", "MaKH", phieuNhap.DonHangID);
+            return View(phieuNhap);
         }
 
-        // POST: ChiTietDonHangs/Edit/5
+        // POST: PhieuNhaps/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaKH,MaHang,DonGia,SoLuong,ThanhTien,MaDH,Ngay,MaNV,TenKH,DiachiKH")] ChiTietDonHang chiTietDonHang)
+        public ActionResult Edit([Bind(Include = "MaNV,TenNV,DonHangID,TenHang,Soluong,thanhtien,Ngaytao")] PhieuNhap phieuNhap)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(chiTietDonHang).State = EntityState.Modified;
+                db.Entry(phieuNhap).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(chiTietDonHang);
+            ViewBag.DonHangID = new SelectList(db.DonHangs, "DonHangID", "MaKH", phieuNhap.DonHangID);
+            return View(phieuNhap);
         }
 
-        // GET: ChiTietDonHangs/Delete/5
+        // GET: PhieuNhaps/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChiTietDonHang chiTietDonHang = db.ChiTietDonHangs.Find(id);
-            if (chiTietDonHang == null)
+            PhieuNhap phieuNhap = db.PhieuNhap.Find(id);
+            if (phieuNhap == null)
             {
                 return HttpNotFound();
             }
-            return View(chiTietDonHang);
+            return View(phieuNhap);
         }
 
-        // POST: ChiTietDonHangs/Delete/5
+        // POST: PhieuNhaps/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            ChiTietDonHang chiTietDonHang = db.ChiTietDonHangs.Find(id);
-            db.ChiTietDonHangs.Remove(chiTietDonHang);
+            PhieuNhap phieuNhap = db.PhieuNhap.Find(id);
+            db.PhieuNhap.Remove(phieuNhap);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -129,28 +129,58 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ChiTietDonHangsController.cs" />
     <Compile Include="Controllers\DanhMucHangsController.cs" />
     <Compile Include="Controllers\DonHangsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangsController.cs" />
     <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\PhieuNhapsController.cs" />
+    <Compile Include="Controllers\phieuxuatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111230216087_InitialCreate.cs" />
-    <Compile Include="Migrations\202111230216087_InitialCreate.Designer.cs">
-      <DependentUpon>202111230216087_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202112051429473_Create_Table_NhanViens.cs" />
+    <Compile Include="Migrations\202112051429473_Create_Table_NhanViens.Designer.cs">
+      <DependentUpon>202112051429473_Create_Table_NhanViens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051430363_Create_Table_KhachHangs.cs" />
+    <Compile Include="Migrations\202112051430363_Create_Table_KhachHangs.Designer.cs">
+      <DependentUpon>202112051430363_Create_Table_KhachHangs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051431164_Create_Table_DanhMucHangs.cs" />
+    <Compile Include="Migrations\202112051431164_Create_Table_DanhMucHangs.Designer.cs">
+      <DependentUpon>202112051431164_Create_Table_DanhMucHangs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051431544_Create_Table_Accounts.cs" />
+    <Compile Include="Migrations\202112051431544_Create_Table_Accounts.Designer.cs">
+      <DependentUpon>202112051431544_Create_Table_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051432385_Create_Table_DonHangs.cs" />
+    <Compile Include="Migrations\202112051432385_Create_Table_DonHangs.Designer.cs">
+      <DependentUpon>202112051432385_Create_Table_DonHangs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051433317_Create_Table_PhieuNhap.cs" />
+    <Compile Include="Migrations\202112051433317_Create_Table_PhieuNhap.Designer.cs">
+      <DependentUpon>202112051433317_Create_Table_PhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051434158_Create_Table_phieuxuat.cs" />
+    <Compile Include="Migrations\202112051434158_Create_Table_phieuxuat.Designer.cs">
+      <DependentUpon>202112051434158_Create_Table_phieuxuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051522336_Alter_Column_SoDT.cs" />
+    <Compile Include="Migrations\202112051522336_Alter_Column_SoDT.Designer.cs">
+      <DependentUpon>202112051522336_Alter_Column_SoDT.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\BTLDbContext.cs" />
-    <Compile Include="Models\ChiTietDonHang.cs" />
     <Compile Include="Models\DanhMucHang.cs" />
     <Compile Include="Models\DonHang.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\phieunhap.cs" />
+    <Compile Include="Models\phieuxuat.cs" />
     <Compile Include="Models\Process\StringProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,6 +189,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\w3.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -538,16 +569,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NhanViens\Create.cshtml" />
-    <Content Include="Views\NhanViens\Delete.cshtml" />
-    <Content Include="Views\NhanViens\Details.cshtml" />
-    <Content Include="Views\NhanViens\Edit.cshtml" />
-    <Content Include="Views\NhanViens\Index.cshtml" />
     <Content Include="Views\KhachHangs\Create.cshtml" />
     <Content Include="Views\KhachHangs\Delete.cshtml" />
     <Content Include="Views\KhachHangs\Details.cshtml" />
     <Content Include="Views\KhachHangs\Edit.cshtml" />
     <Content Include="Views\KhachHangs\Index.cshtml" />
+    <Content Include="Views\NhanViens\Create.cshtml" />
+    <Content Include="Views\NhanViens\Delete.cshtml" />
+    <Content Include="Views\NhanViens\Details.cshtml" />
+    <Content Include="Views\NhanViens\Edit.cshtml" />
+    <Content Include="Views\NhanViens\Index.cshtml" />
     <Content Include="Views\DonHangs\Create.cshtml" />
     <Content Include="Views\DonHangs\Delete.cshtml" />
     <Content Include="Views\DonHangs\Details.cshtml" />
@@ -558,11 +589,16 @@
     <Content Include="Views\DanhMucHangs\Details.cshtml" />
     <Content Include="Views\DanhMucHangs\Edit.cshtml" />
     <Content Include="Views\DanhMucHangs\Index.cshtml" />
-    <Content Include="Views\ChiTietDonHangs\Create.cshtml" />
-    <Content Include="Views\ChiTietDonHangs\Delete.cshtml" />
-    <Content Include="Views\ChiTietDonHangs\Details.cshtml" />
-    <Content Include="Views\ChiTietDonHangs\Edit.cshtml" />
-    <Content Include="Views\ChiTietDonHangs\Index.cshtml" />
+    <Content Include="Views\PhieuNhaps\Create.cshtml" />
+    <Content Include="Views\PhieuNhaps\Delete.cshtml" />
+    <Content Include="Views\PhieuNhaps\Details.cshtml" />
+    <Content Include="Views\PhieuNhaps\Edit.cshtml" />
+    <Content Include="Views\PhieuNhaps\Index.cshtml" />
+    <Content Include="Views\phieuxuats\Create.cshtml" />
+    <Content Include="Views\phieuxuats\Delete.cshtml" />
+    <Content Include="Views\phieuxuats\Details.cshtml" />
+    <Content Include="Views\phieuxuats\Edit.cshtml" />
+    <Content Include="Views\phieuxuats\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
@@ -584,8 +620,29 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111230216087_InitialCreate.resx">
-      <DependentUpon>202111230216087_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112051429473_Create_Table_NhanViens.resx">
+      <DependentUpon>202112051429473_Create_Table_NhanViens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051430363_Create_Table_KhachHangs.resx">
+      <DependentUpon>202112051430363_Create_Table_KhachHangs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051431164_Create_Table_DanhMucHangs.resx">
+      <DependentUpon>202112051431164_Create_Table_DanhMucHangs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051431544_Create_Table_Accounts.resx">
+      <DependentUpon>202112051431544_Create_Table_Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051432385_Create_Table_DonHangs.resx">
+      <DependentUpon>202112051432385_Create_Table_DonHangs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051433317_Create_Table_PhieuNhap.resx">
+      <DependentUpon>202112051433317_Create_Table_PhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051434158_Create_Table_phieuxuat.resx">
+      <DependentUpon>202112051434158_Create_Table_phieuxuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051522336_Alter_Column_SoDT.resx">
+      <DependentUpon>202112051522336_Alter_Column_SoDT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,5 +16,11 @@ namespace BaiTapLon.Models
         public string TenKH { get; set; }
         [AllowHtml]
         public string DiachiKH { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number Required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                      ErrorMessage = "Entered phone format is not valid.")]
+        public string SoDT { get; set; }
     }
 }

@@ -11,9 +11,12 @@ namespace BaiTapLon.Models
     public class DonHang
     {
         [Key]
-        public int DonHangID { get; set; }
+        public string DonHangID { get; set; } 
         public string MaKH { get; set; }
+        [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
         public string MaNV { get; set; }
+        
     }
 }
+
