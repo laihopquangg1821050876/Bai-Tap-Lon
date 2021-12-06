@@ -14,6 +14,9 @@
 <table class="w3-table-all w3-hoverable " style="font-family: Times New Roman; font-size:20px">
     <tr class="w3-blue-grey">
         <th>
+            <label>ID Đơn hàng</label>
+        </th>
+        <th>
             <label>Mã khách hàng</label>
         </th>
         <th>
@@ -27,22 +30,25 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaKH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaNV)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.DonHangID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.DonHangID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DonHangID })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonHangID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaKH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreateDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaNV)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.DonHangID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DonHangID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DonHangID })
+    </td>
+</tr>
     }
 
 </table>

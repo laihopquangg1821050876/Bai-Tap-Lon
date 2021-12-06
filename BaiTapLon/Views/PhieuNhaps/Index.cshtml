@@ -21,6 +21,9 @@
             <label>Tên nhân viên</label>
         </th>
         <th>
+            <label>ID Đơn hàng</label>
+        </th>
+        <th>
             <label>Tên sản phẩm</label>
         </th>
         <th>
@@ -37,31 +40,34 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonHangs.MaKH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenNV)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenHang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Soluong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.thanhtien)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ngaytao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaNV }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaNV }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaNV })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonHangID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Soluong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.thanhtien)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaytao)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaNV }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaNV }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaNV })
+    </td>
+</tr>
     }
 
 </table>

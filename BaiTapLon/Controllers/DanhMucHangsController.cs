@@ -13,6 +13,7 @@ namespace BaiTapLon.Controllers
     public class DanhMucHangsController : Controller
     {
         private BTLDbContext db = new BTLDbContext();
+        [Authorize]
 
         // GET: DanhMucHangs
         public ActionResult Index()

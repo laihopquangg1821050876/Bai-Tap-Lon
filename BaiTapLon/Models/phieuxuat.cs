@@ -17,6 +17,7 @@ namespace BaiTapLon.Models
         public string TenHang { get; set; }
         public int Soluong { get; set; }
         public string thanhtien { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Ngaytao { get; set; }
         public virtual DonHang DonHangs { get; set; }
     }
